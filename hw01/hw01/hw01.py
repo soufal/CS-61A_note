@@ -12,11 +12,16 @@ def a_plus_abs_b(a, b):
     >>> a_plus_abs_b(-1, -4)
     3
     """
+    # if b < 0:
+    #     f = add(a, -b)
+    # else:
+    #     f = add(a, b)
+    #office answer
     if b < 0:
-        f = add(a, -b)
+        f = sub
     else:
-        f = add(a, b)
-    return f
+        f = add
+    return f(a, b)
 
 def a_plus_abs_b_syntax_check():
     """Check that you didn't change the return statement of a_plus_abs_b.
@@ -42,11 +47,13 @@ def two_of_three(i, j, k):
     >>> two_of_three(5, 5, 5)
     50
     """
-    min_v = min(i, j, k)
-    max_v = max(i, j, k)
-    medim_v = sub(sub(add(add(i, j), k), min_v), max_v)
-    result = add(min_v*min_v, medim_v*medim_v)
-    return result
+    # min_v = min(i, j, k)
+    # max_v = max(i, j, k)
+    # medim_v = sub(sub(add(add(i, j), k), min_v), max_v)
+    # result = add(min_v*min_v, medim_v*medim_v)
+    # return min(i*i+j*j, i*i+k*k, j*j+k*k)
+    # other solution
+    return i**2+j**2+k**2 - max(i,j,k)**2
 
 def two_of_three_syntax_check():
     """Check that your two_of_three code consists of nothing but a return statement.
@@ -84,7 +91,7 @@ def hailstone(n):
 
     >>> a = hailstone(10)
     10
-    5
+    5~
     16
     8
     4
@@ -104,11 +111,11 @@ def hailstone(n):
 
     while n != 1:
         if(n % 2 == 0):
-            n = int(n / 2)
+            n = n // 2
             print(n)
             hailstone_len += 1
         else:
-            n = int(n * 3 + 1)
+            n = n * 3 + 1
             print(n)
             hailstone_len += 1
 
