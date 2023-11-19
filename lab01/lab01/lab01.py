@@ -1,3 +1,8 @@
+'''
+Author: Soufal
+Date: 2023-11-09 21:36:50
+Description: 
+'''
 def falling(n, k):
     """Compute the falling factorial of n to depth k.
 
@@ -11,6 +16,13 @@ def falling(n, k):
     1
     """
     "*** YOUR CODE HERE ***"
+    i = 1
+    result = 1
+    while i <= k:
+        result = result * n
+        n -= 1
+        i += 1
+    return result
 
 
 def divisible_by_k(n, k):
@@ -34,6 +46,14 @@ def divisible_by_k(n, k):
     0
     """
     "*** YOUR CODE HERE ***"
+    total = 0
+    i = 1
+    while i <= n:
+        if(i % k == 0) :
+            total += 1
+            print(i)
+        i += 1
+    return total
 
 
 def sum_digits(y):
@@ -50,7 +70,10 @@ def sum_digits(y):
     6
     """
     "*** YOUR CODE HERE ***"
-
+    result = 0
+    for i in str(y):
+        result += int(i)
+    return result
 
 def double_eights(n):
     """Return true if n has two eights in a row.
@@ -68,4 +91,6 @@ def double_eights(n):
     False
     """
     "*** YOUR CODE HERE ***"
-
+    if "88" in str(n):
+        return True
+    return False
