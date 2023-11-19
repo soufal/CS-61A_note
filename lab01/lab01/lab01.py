@@ -70,10 +70,14 @@ def sum_digits(y):
     6
     """
     "*** YOUR CODE HERE ***"
-    result = 0
-    for i in str(y):
-        result += int(i)
-    return result
+    # result = 0
+    # for i in str(y):
+    #     result += int(i)
+    # return result
+    total = 0
+    while y > 0:
+        total, y = total + y % 10, y // 10
+    return total
 
 def double_eights(n):
     """Return true if n has two eights in a row.
@@ -91,6 +95,11 @@ def double_eights(n):
     False
     """
     "*** YOUR CODE HERE ***"
-    if "88" in str(n):
-        return True
+    # if "88" in str(n):
+    #     return True
+    # return False
+    while n:
+        if n % 10 == 8 and n // 10 % 10 == 8:
+            return True
+        n //= 10
     return False
